@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sumaq Inti</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--t:#14b8a6;--td:#0f9488;--y:#fbbf24;--bg:#e8f6fb;--tx:#1e3a4c;--m:#6b8494}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Nunito,sans-serif;background:var(--bg);color:var(--tx)}
+button,input{font-family:inherit}
+a{color:var(--td);font-weight:700}
+.btn{border:0;background:var(--t);color:#fff;font-weight:700;padding:10px 18px;border-radius:12px;cursor:pointer;font-size:14px;transition:.2s}
+.btn:hover{background:var(--td)}.btn.o{background:#fff;color:var(--td);border:2px solid var(--t)}.btn:disabled{background:#c5d6dc;color:#fff;cursor:default}
+.card{background:#fff;border-radius:18px;padding:18px;box-shadow:0 4px 14px rgba(20,120,140,.08)}
+.m{color:var(--m)}.s{font-size:12px}
+h1{font-size:28px;font-weight:800}h2{font-size:18px}h3{font-size:16px;margin:20px 0 12px}
+.sub{color:var(--m);margin:2px 0 18px}
+.logo{font-weight:800;font-size:20px;display:flex;gap:6px;align-items:center}.logo span{color:var(--td)}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.g2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.bar{height:10px;background:#e2eef2;border-radius:99px;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--t),#34d399);border-radius:99px;transition:width 1s}
+/* landing */
+.lh{display:flex;justify-content:space-between;align-items:center;padding:14px 6vw;background:#fff;gap:16px;position:sticky;top:0;z-index:5;border-bottom:1px solid #eef3f5}
+.lh nav{display:flex;gap:26px;font-size:14px;font-weight:600}.lh nav a{color:var(--tx);text-decoration:none;font-weight:600}
+.acts{display:flex;gap:14px;align-items:center}
+.lk{background:none;border:0;font-weight:700;font-size:14px;color:var(--tx);cursor:pointer}
+.yb{border:0;background:var(--y);color:#3b2a00;font-weight:800;padding:11px 20px;border-radius:12px;cursor:pointer;font-size:14px;transition:.2s}.yb:hover{background:#f5b50f}
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:30px;align-items:center;padding:50px 6vw;background:#fff}
+.tag{display:inline-block;background:#e6f7f5;color:var(--td);font-size:12px;font-weight:700;padding:6px 12px;border-radius:99px;margin-bottom:16px}
+.hero h1{font-size:54px;line-height:1.05;color:#0f2a43;margin-bottom:16px}.hero h1 em,.lft h2 em{font-style:normal;color:var(--t)}
+.hero p{color:var(--m);font-size:16px;max-width:460px;margin-bottom:24px;line-height:1.5}
+.pv{background:#fff;border:4px solid #1e3a4c;border-radius:22px;padding:16px;box-shadow:0 20px 40px rgba(20,60,90,.2)}
+.pvh{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-size:13px}
+.pv h2{margin:2px 0 10px}.pvm{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 0;text-align:center;font-size:11px;color:var(--m)}.pvm div{background:#f3fafb;border-radius:10px;padding:8px}.pvm b{display:block;font-size:16px;color:var(--tx)}
+.pvb{background:#12324a;color:#fff;border-radius:12px;padding:12px;display:flex;gap:10px;align-items:center;font-size:13px}.pvb small{display:block;opacity:.7}
+.sec{padding:50px 6vw;text-align:center}.sec h2{font-size:30px;color:#0f2a43;margin-bottom:22px}.sec .card b{font-size:34px;display:block;margin-bottom:6px}.sec .card p{color:var(--m);font-size:14px;margin-top:4px}
+.sec.w{background:#fff}.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.foot{text-align:center;padding:24px;color:var(--m);font-size:13px}
+/* login */
+.lg2{display:grid;grid-template-columns:1fr 1fr;min-height:100vh;background:#fff}
+.lft{background:linear-gradient(180deg,#bfe9f7,#e3f6fb 55%,#fff);padding:40px;position:relative;overflow:hidden}
+.lft h2{font-size:36px;line-height:1.15;color:#0f2a43;margin-top:50px;max-width:320px}
+.lft svg{position:absolute;left:0;bottom:0;width:100%;height:45%}
+.rgt{display:flex;align-items:center;justify-content:center;padding:30px}
+.fi{width:100%;max-width:340px;display:flex;flex-direction:column;gap:14px}.fi h2{font-size:30px;color:#0f2a43}
+.iw{position:relative}.iw span{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:15px}
+.iw input{padding-left:42px}
+.fi input,.sim input{padding:13px 14px;border:2px solid #d5e6ec;border-radius:12px;font-size:15px;outline:none;width:100%}
+.fi input:focus,.sim input:focus{border-color:var(--t)}
+.er{color:#c0392b;font-size:13px;min-height:16px}.sw{text-align:center;font-size:14px;display:block}
+/* app */
+.app{display:flex;min-height:100vh}
+.side{width:210px;background:#fff;padding:20px 14px;display:flex;flex-direction:column;gap:6px;border-right:1px solid #d9eaf0;flex-shrink:0}
+.side .logo{margin-bottom:16px}
+.side button{display:flex;gap:10px;align-items:center;padding:11px 14px;border-radius:12px;border:0;background:none;color:var(--tx);font-weight:600;font-size:14px;cursor:pointer;text-align:left}
+.side button:hover{background:#e6f7f5}.side button.on{background:#d4f1ee;color:var(--td)}
+.main{flex:1;padding:18px 24px;max-width:1100px}
+.top{display:flex;justify-content:flex-end;align-items:center;gap:12px;margin-bottom:18px;font-size:13px;font-weight:700}
+.av{width:38px;height:38px;border-radius:50%;background:var(--t);color:#fff;display:grid;place-items:center;font-weight:800;text-transform:uppercase}
+.lev{display:flex;gap:18px;align-items:center;margin-bottom:14px}
+.bdg{width:70px;height:70px;border-radius:50%;background:linear-gradient(135deg,#fde68a,var(--y));display:grid;place-items:center;font-size:34px;flex-shrink:0}
+.stat{display:flex;gap:12px;align-items:center}.stat span{font-size:28px}.stat b{font-size:20px;display:block}
+.steps{display:flex;justify-content:space-between;position:relative}
+.steps::before{content:"";position:absolute;top:44px;left:8%;right:8%;height:3px;background:#d5e6ec}
+.st{text-align:center;font-size:12px;font-weight:700;position:relative;flex:1}.st small{display:block;color:var(--m);font-weight:600}
+.dt{width:50px;height:50px;border-radius:50%;margin:0 auto 6px;display:grid;place-items:center;font-size:20px;background:#e2eaee;color:#9bb0ba;position:relative}
+.st.dn .dt{background:var(--t);color:#fff}.st.ac .dt{background:var(--td);color:#fff;box-shadow:0 0 0 6px #c9efe9}
+.cc{display:flex;flex-direction:column;gap:8px}.cc .t{display:flex;gap:10px;align-items:center;font-weight:700;font-size:14px}.cc .t span{font-size:28px}
+.row{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700}.row .bar{flex:1;height:7px}
+.lg{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #eef3f5;font-size:14px}.lg:last-child{border:0}
+.les{margin-bottom:12px}.les p{margin:6px 0 12px;line-height:1.5}
+.sim label{display:block;font-size:13px;font-weight:700;margin:10px 0 4px}.res{margin-top:14px;padding:12px;background:#e6f7f5;border-radius:12px;font-size:14px;line-height:1.5}
+.opt{display:block;padding:10px 12px;border:2px solid #e2eef2;border-radius:12px;margin:6px 0;cursor:pointer;font-size:14px}
+.opt.ok{border-color:#16a34a;background:#dcfce7}.opt.no{border-color:#dc2626;background:#fee2e2}
+.bd{text-align:center;padding:16px}.bd b{font-size:40px;display:block}.bd.lk{opacity:.4;filter:grayscale(1)}
+.cert{text-align:center;padding:30px;border:4px double var(--y)}.cert h2{font-size:24px;margin:8px 0}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--tx);color:#fff;padding:12px 20px;border-radius:99px;font-weight:700;font-size:14px;z-index:9;display:none}
+@media(max-width:900px){.g3,.g4{grid-template-columns:1fr 1fr}.hero{grid-template-columns:1fr}.hero h1{font-size:36px}.lh nav{display:none}}
+@media(max-width:700px){.app{flex-direction:column}.side{width:100%;flex-direction:row;overflow-x:auto;padding:10px}.side .logo{display:none}.side button{white-space:nowrap}.g3,.g2,.g4{grid-template-columns:1fr}.lg2{grid-template-columns:1fr}.lft{display:none}.main{padding:14px}.steps{overflow-x:auto;gap:12px}.st{min-width:78px}.steps::before{display:none}}
+@media print{.side,.top,.noprint,.toast{display:none!important}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<div class="toast" id="toast"></div>
+<script>
+const $=s=>document.querySelector(s);
+const LV=['Básico','Aventurero','Explorador','Inversor','Experto'];
+const C=[
+{id:'c1',t:'Educación financiera para la vida',i:'📘',l:[['¿Qué es el dinero?','El dinero es un medio de intercambio: sirve para comprar, ahorrar e invertir. Usarlo bien empieza por saber cuánto entra y cuánto sale.'],['Ingresos y gastos','Ingreso es lo que recibes; gasto es lo que pagas. Separa los gastos necesarios (comida, transporte) de los gustos, y busca gastar menos de lo que ganas.'],['Ahorrar con un objetivo','Ahorrar es más fácil con una meta clara: un monto y una fecha. Separa tu ahorro apenas recibas dinero, no al final del mes.']],
+q:[['¿Qué es un gasto?',['Dinero que recibes','Dinero que pagas','Dinero que ahorras'],1],['¿Qué conviene hacer primero al recibir dinero?',['Gastarlo todo','Separar tu ahorro','Prestarlo'],1],['Una buena meta de ahorro tiene...',['Monto y fecha','Solo un deseo','Ningún plazo'],0]]},
+{id:'c2',t:'Uso de simuladores financieros',i:'💻',l:[['Para qué sirven los simuladores','Un simulador te deja probar números sin arriesgar dinero real. Cambia el ahorro, el tiempo o el interés y mira el resultado antes de decidir.'],['Interés compuesto','Con interés compuesto ganas intereses sobre tu dinero y también sobre los intereses anteriores. Mientras más tiempo pase, mayor es el efecto.']],
+q:[['El interés compuesto significa que ganas intereses sobre...',['Solo tu aporte inicial','Tu aporte y los intereses ya ganados','Nada'],1],['Un simulador financiero sirve para...',['Garantizar ganancias','Probar escenarios antes de decidir','Reemplazar tu presupuesto'],1],['Si aumentas los años de ahorro, el resultado final normalmente...',['Crece','Baja','No cambia'],0]]},
+{id:'c3',t:'Seguros y protección financiera',i:'🛡️',l:[['¿Qué es un seguro?','Un seguro es un acuerdo: pagas una prima y la aseguradora cubre ciertos riesgos, como salud, robo o accidentes.'],['Fondo de emergencia','Es dinero guardado solo para imprevistos. Una guía común es juntar entre 3 y 6 meses de tus gastos básicos.']],
+q:[['Un seguro sirve para...',['Cubrir pérdidas por imprevistos','Ganar dinero rápido','Evitar los gastos'],0],['El fondo de emergencia se usa para...',['Compras de ocio','Imprevistos reales','Inversiones riesgosas'],1],['Una guía común es guardar un fondo de...',['3 a 6 meses de gastos','1 día de gastos','Tu sueldo de todo el año'],0]]}];
+const CH=[['Registra tus gastos 3 días','Anota cada gasto durante tres días y revisa en qué se fue tu dinero.'],['Define una meta de ahorro','Elige algo que quieras comprar, su costo y una fecha.'],['Arma tu presupuesto del mes','Usa el simulador de presupuesto con tus datos reales.'],['Explica el interés compuesto','Cuéntaselo a un amigo con tus propias palabras.']];
+const B=[['🌱','Primer paso','Completa una lección',d=>d.ls.length>=1],['🧮','Calculador','Usa un simulador',d=>d.sm.length>=1],['🧠','Cerebrito','Aprueba un quiz',d=>Object.values(d.qz).some(v=>v>=2)],['🏁','Retador','Completa un reto',d=>d.ch.length>=1],['⭐','Explorador','Llega a 100 puntos',d=>d.p>=100],['🏆','Experto','Llega a 400 puntos',d=>d.p>=400]];
+const NAV=[['inicio','🏠','Inicio'],['cursos','📘','Mis cursos'],['simuladores','🎮','Simuladores'],['quizzes','📝','Quizzes'],['retos','🏁','Retos'],['recompensas','🏆','Recompensas']];
+
+/* datos */
+const U=()=>{try{return JSON.parse(localStorage.getItem('si_u')||'{}')}catch(e){return {}}};
+const SU=u=>localStorage.setItem('si_u',JSON.stringify(u));
+let me=null,v='land',reg=false,sel=null,qsel=null,qres=null;
+const cur=()=>U()[me];
+const save=fn=>{const u=U();fn(u[me]);SU(u)};
+function toast(t){const e=$('#toast');e.textContent=t;e.style.display='block';clearTimeout(toast.h);toast.h=setTimeout(()=>e.style.display='none',2200)}
+function add(n,t){save(x=>{x.d.p+=n;x.d.log.unshift([t,n,new Date().toLocaleDateString('es-PE')]);x.d.log=x.d.log.slice(0,5)});toast('+'+n+' puntos: '+t)}
+const go=x=>{v=x;sel=qsel=qres=null;render();scrollTo(0,0)};
+const lvl=p=>Math.min(4,Math.floor(p/100));
+const cdone=(d,c)=>c.l.filter((_,i)=>d.ls.includes(c.id+i)).length;
+
+/* sesión */
+function doReg(){const n=$('#n').value.trim(),g=$('#g').value.trim(),e=$('#e').value.trim().toLowerCase(),p=$('#p').value;
+ if(!n||!e.includes('@'))return $('#er').textContent='Escribe tu nombre y un correo válido.';
+ if(p.length<6)return $('#er').textContent='La contraseña debe tener al menos 6 caracteres.';
+ const u=U();if(u[e])return $('#er').textContent='Ese correo ya está registrado.';
+ u[e]={n,g,p,d:{p:0,ls:[],qz:{},sm:[],ch:[],log:[]}};SU(u);localStorage.setItem('si_s',e);v='inicio';render()}
+function doLog(){const e=$('#e').value.trim().toLowerCase(),p=$('#p').value,x=U()[e];
+ if(!x||x.p!==p)return $('#er').textContent='Correo o contraseña incorrectos.';
+ localStorage.setItem('si_s',e);v='inicio';render()}
+function out(){localStorage.removeItem('si_s');v='land';render()}
+
+/* pantallas públicas */
+const LG='<div class="logo">☀️ <div style="line-height:1">SUMAQ<br><span>INTI</span></div></div>';
+const LAND=()=>`<div class="lh">${LG}<nav><a href="#como">Cómo funciona</a><a href="#beneficios">Beneficios</a><a href="#colegios">Para colegios</a><a href="#impacto">Impacto</a></nav><div class="acts"><button class="lk" onclick="reg=false;go('auth')">Ingresar</button><button class="yb" onclick="reg=true;go('auth')">Crea tu cuenta</button></div></div>
+<section class="hero"><div><span class="tag">✦ Educación financiera que transforma</span><h1>El futuro financiero de tus alumnos <em>empieza hoy.</em></h1><p>Llevamos la educación financiera al aula con experiencias prácticas, medibles y gamificadas que los jóvenes sí quieren completar.</p><div class="acts"><button class="yb" onclick="reg=true;go('auth')">Crea tu cuenta</button><button class="lk" onclick="document.getElementById('como').scrollIntoView({behavior:'smooth'})">▶ Conoce la plataforma</button></div></div>
+<div class="pv"><div class="pvh"><b>☀️ SUMAQ INTI</b><span class="m s">Ana Sánchez</span></div><p class="m s">TU PROGRESO</p><h2>¡Hola, Ana! 👋</h2><div style="border:1px solid #e2eef2;border-radius:12px;padding:12px"><small class="m">Nivel 3</small><b style="display:block">Explorador Financiero</b><div class="bar" style="margin-top:6px"><i style="width:64%"></i></div></div><div class="pvm"><div><b>2 / 5</b>Cursos</div><div><b>3</b>Simuladores</div><div><b>4</b>Insignias</div></div><div class="pvb">💰<div><b>Aprende a crear tu presupuesto</b><small>Lección 3 · 15 min</small></div></div></div></section>
+<section class="sec w" id="como"><h2>Cómo funciona</h2><div class="g3"><div class="card"><b>1</b><h2>Crea tu cuenta</h2><p>Regístrate con tu nombre y correo.</p></div><div class="card"><b>2</b><h2>Aprende y practica</h2><p>Lecciones cortas, simuladores y quizzes.</p></div><div class="card"><b>3</b><h2>Gana recompensas</h2><p>Suma puntos, sube de nivel y obtén tu certificado.</p></div></div></section>
+<section class="sec" id="beneficios"><h2>Beneficios</h2><div class="g4"><div class="card"><b>📘</b><h2>Cursos</h2><p>Lecciones breves sobre ahorro, gastos y protección.</p></div><div class="card"><b>🎮</b><h2>Simuladores</h2><p>Prueba presupuestos e interés compuesto sin riesgo.</p></div><div class="card"><b>📝</b><h2>Quizzes</h2><p>Comprueba lo que aprendiste y suma puntos.</p></div><div class="card"><b>🏆</b><h2>Retos y recompensas</h2><p>Sube de nivel y gana insignias.</p></div></div></section>
+<section class="sec w" id="colegios"><h2>Para colegios</h2><div class="card" style="max-width:640px;margin:auto"><p style="font-size:16px;color:var(--tx)">Contenido breve y práctico que se puede usar en clase: cursos, simuladores, quizzes y retos para que cada estudiante avance a su ritmo.</p></div></section>
+<section class="sec" id="impacto"><h2>La plataforma en números</h2><div class="g4"><div class="card"><b>3</b><p>cursos</p></div><div class="card"><b>2</b><p>simuladores</p></div><div class="card"><b>5</b><p>niveles de progreso</p></div><div class="card"><b>6</b><p>insignias</p></div></div></section>
+<div class="foot">☀️ Sumaq Inti · Educación financiera para jóvenes</div>`;
+const AUTH=()=>`<div class="lg2"><div class="lft">${LG}<h2>Pequeñas decisiones hoy, <em>grandes metas mañana.</em></h2><svg viewBox="0 0 400 220" preserveAspectRatio="none"><circle cx="280" cy="50" r="30" fill="#fde68a"/><path d="M0 220V120l90-70 80 80 70-50 160 100v40z" fill="#9fd8cf"/><path d="M0 220v-60l110-50 100 70 90-40 100 60v20z" fill="#4fb8a5"/><path d="M0 220v-25q100-40 200-10t200-5v40z" fill="#2c9c8a"/></svg></div>
+<div class="rgt"><div class="fi">${LG}<h2>${reg?'Crea tu cuenta':'¡Bienvenido!'}</h2><p class="m">${reg?'Regístrate para empezar tu aprendizaje en educación financiera.':'Inicia sesión para continuar tu aprendizaje en educación financiera.'}</p>${reg?'<div class="iw"><span>👤</span><input id="n" placeholder="Nombre y apellido" maxlength="40"></div><div class="iw"><span>🎓</span><input id="g" placeholder="Grado y sección (opcional)" maxlength="12"></div>':''}<div class="iw"><span>✉️</span><input id="e" type="email" placeholder="Correo"></div><div class="iw"><span>🔒</span><input id="p" type="password" placeholder="Contraseña (mín. 6)"></div><p id="er" class="er"></p><button class="yb" style="padding:14px;font-size:15px" onclick="${reg?'doReg()':'doLog()'}">${reg?'Registrarme':'Iniciar sesión'}</button><span class="sw">${reg?'¿Ya tienes cuenta?':'¿Eres nuevo?'} <a href="#" onclick="reg=!reg;render();return false">${reg?'Inicia sesión':'Crea tu cuenta'}</a></span><a href="#" class="sw" onclick="go('land');return false">← Volver al inicio</a></div></div></div>`;
+
+/* vistas del estudiante */
+function cardC(c){const d=cur().d,n=cdone(d,c),p=Math.round(n/c.l.length*100);
+ return `<div class="card cc"><div class="t"><span>${c.i}</span>${c.t}</div><p class="m s">${c.l.length} lecciones</p><div class="row"><div class="bar"><i style="width:${p}%"></i></div>${p}%</div><button class="btn ${n==c.l.length?'o':''}" onclick="sel='${c.id}';go2('cursos')">${n==0?'Comenzar':n==c.l.length?'Repasar':'Continuar'}</button></div>`}
+const go2=x=>{v=x;qres=null;render();scrollTo(0,0)};
+function inicio(){const x=cur(),d=x.d,l=lvl(d.p),mx=l==4,into=mx?100:d.p-l*100;
+ const dn=C.filter(c=>cdone(d,c)==c.l.length).length,nb=B.filter(b=>b[3](d)).length;
+ return `<h1>¡Hola, ${x.n.split(' ')[0]}! 👋</h1><p class="sub">Cada paso cuenta. Sigue avanzando.</p>
+<div class="card lev"><div class="bdg">⭐</div><div style="flex:1"><h2>Nivel ${l+1}</h2><p class="m">${LV[l]} · ${d.p} puntos</p><div class="bar"><i style="width:${into}%"></i></div><p class="m s" style="margin-top:5px">${mx?'¡Nivel máximo!':into+' / 100 puntos para el siguiente nivel'}</p></div></div>
+<div class="g3"><div class="card stat"><span>📋</span><div><small class="m">Cursos completados</small><b>${dn} / ${C.length}</b></div></div><div class="card stat"><span>🎮</span><div><small class="m">Simuladores usados</small><b>${d.sm.length} / 2</b></div></div><div class="card stat"><span>🛡️</span><div><small class="m">Insignias obtenidas</small><b>${nb} / ${B.length}</b></div></div></div>
+<h3>Tu progreso</h3><div class="card steps">${LV.map((n,i)=>`<div class="st ${i<l?'dn':i==l?'ac':''}"><div class="dt">${i<l?'✓':i==l?'★':'🔒'}</div>Nivel ${i+1}<small>${n}</small></div>`).join('')}</div>
+<h3>Próximos cursos</h3><div class="g3">${C.map(cardC).join('')}</div>
+<h3>Últimos logros</h3><div class="card">${d.log.length?d.log.map(a=>`<div class="lg"><span>🎖️ ${a[0]}</span><span><b style="color:var(--td)">+${a[1]}</b> <span class="m s">${a[2]}</span></span></div>`).join(''):'<p class="m">Aún no tienes logros. ¡Completa tu primera lección!</p>'}</div>`}
+
+function cursos(){const d=cur().d;
+ if(sel){const c=C.find(k=>k.id==sel);
+  return `<button class="btn o" onclick="sel=null;render()">← Mis cursos</button><h1 style="margin-top:14px">${c.i} ${c.t}</h1><p class="sub">Cada lección completada suma 20 puntos.</p>${c.l.map((a,i)=>{const k=c.id+i,ok=d.ls.includes(k);return `<div class="card les"><h2>${i+1}. ${a[0]}</h2><p>${a[1]}</p><button class="btn ${ok?'o':''}" ${ok?'disabled':''} onclick="lesson('${k}')">${ok?'✓ Completada':'Marcar como completada'}</button></div>`}).join('')}<button class="btn" onclick="qsel='${c.id}';go2('quizzes')">Hacer el quiz de este curso</button>`}
+ return `<h1>Mis cursos</h1><p class="sub">Elige un curso para empezar.</p><div class="g3">${C.map(cardC).join('')}</div>`}
+function lesson(k){if(cur().d.ls.includes(k))return;save(x=>x.d.ls.push(k));add(20,'Lección completada');render()}
+
+function first(k){if(!cur().d.sm.includes(k)){save(x=>x.d.sm.push(k));add(30,'Simulador usado')}}
+function simP(){const g=i=>+$('#'+i).value||0,ing=g('ig'),gs=g('g1')+g('g2')+g('g3')+g('g4'),a=ing-gs;
+ if(ing<=0)return $('#r1').innerHTML='Escribe tu ingreso mensual.';
+ $('#r1').innerHTML=`Ahorro mensual: <b>S/ ${a.toFixed(2)}</b> (${(a/ing*100).toFixed(0)}% de tu ingreso).<br>${a<0?'Gastas más de lo que ganas: revisa primero los gastos de ocio.':a/ing<.1?'Intenta llegar al menos al 10% de ahorro.':'¡Buen margen de ahorro!'}`;first('p')}
+function simI(){const g=i=>+$('#'+i).value||0,ap=g('ap'),t=g('ta'),y=g('ya');
+ if(ap<=0||y<=0)return $('#r2').innerHTML='Escribe un aporte y los años.';
+ const r=t/1200,n=y*12,fv=r?ap*(Math.pow(1+r,n)-1)/r:ap*n,ti=ap*n,f=z=>'S/ '+z.toLocaleString('es-PE',{minimumFractionDigits:2,maximumFractionDigits:2});
+ $('#r2').innerHTML=`Aportarías <b>${f(ti)}</b> y tendrías <b>${f(fv)}</b>. Intereses ganados: <b>${f(fv-ti)}</b>.<br><span class="m s">Cálculo referencial: las tasas reales varían y no están garantizadas.</span>`;first('i')}
+const inp=(l,id,val)=>`<label>${l}</label><input id="${id}" type="number" min="0" value="${val}">`;
+const simuladores=()=>`<h1>Simuladores</h1><p class="sub">Prueba números sin riesgo. Usar cada simulador por primera vez suma 30 puntos.</p><div class="g2">
+<div class="card sim"><h2>🧾 Presupuesto mensual</h2>${inp('Ingreso mensual (S/)','ig',1000)}${inp('Vivienda y servicios (S/)','g1',300)}${inp('Comida (S/)','g2',250)}${inp('Transporte (S/)','g3',100)}${inp('Ocio y otros (S/)','g4',150)}<button class="btn" style="margin-top:14px" onclick="simP()">Calcular</button><div class="res" id="r1">Completa los datos y pulsa Calcular.</div></div>
+<div class="card sim"><h2>📈 Ahorro con interés compuesto</h2>${inp('Aporte mensual (S/)','ap',100)}${inp('Tasa anual (%)','ta',4)}${inp('Años','ya',5)}<button class="btn" style="margin-top:14px" onclick="simI()">Calcular</button><div class="res" id="r2">Completa los datos y pulsa Calcular.</div></div></div>`;
+
+function quizzes(){const d=cur().d;
+ if(qsel){const c=C.find(k=>k.id==qsel);
+  return `<button class="btn o" onclick="qsel=qres=null;render()">← Quizzes</button><h1 style="margin-top:14px">${c.i} Quiz: ${c.t}</h1><p class="sub">${qres?`Resultado: ${qres.s} de ${c.q.length}. ${qres.s>=2?'¡Aprobado!':'Necesitas al menos 2 aciertos. Repasa el curso e inténtalo otra vez.'}`:'Aprueba con 2 aciertos y gana 40 puntos (la primera vez).'}</p>
+${c.q.map((q,i)=>`<div class="card les"><h2>${i+1}. ${q[0]}</h2>${q[1].map((o,j)=>`<label class="opt ${qres?(j==q[2]?'ok':qres.a[i]==j?'no':''):''}"><input type="radio" name="q${i}" value="${j}" ${qres&&qres.a[i]==j?'checked':''} ${qres?'disabled':''}> ${o}</label>`).join('')}</div>`).join('')}
+${qres?`<button class="btn" onclick="qres=null;render()">Intentar de nuevo</button>`:`<button class="btn" onclick="qsend()">Enviar respuestas</button>`}`}
+ return `<h1>Quizzes</h1><p class="sub">Comprueba lo que aprendiste en cada curso.</p><div class="g3">${C.map(c=>{const b=d.qz[c.id];return `<div class="card cc"><div class="t"><span>📝</span>${c.t}</div><p class="m s">${c.q.length} preguntas · ${b==null?'Sin intentos':'Mejor resultado: '+b+'/'+c.q.length}</p><button class="btn" onclick="qsel='${c.id}';qres=null;render()">${b==null?'Empezar':'Repetir'}</button></div>`}).join('')}</div>`}
+function qsend(){const c=C.find(k=>k.id==qsel),a=c.q.map((_,i)=>{const e=document.querySelector(`input[name=q${i}]:checked`);return e?+e.value:null});
+ if(a.includes(null))return toast('Responde todas las preguntas');
+ const s=a.filter((x,i)=>x==c.q[i][2]).length,prev=cur().d.qz[c.id];
+ save(x=>{if(prev==null||s>prev)x.d.qz[c.id]=s});qres={a,s};
+ if(s>=2&&!(prev>=2))add(40,'Quiz aprobado');render()}
+
+function retos(){const d=cur().d;
+ return `<h1>Retos</h1><p class="sub">Pon en práctica lo aprendido. Cada reto suma 30 puntos. (${d.ch.length} de ${CH.length} completados)</p><div class="g2">${CH.map((c,i)=>{const ok=d.ch.includes(i);return `<div class="card cc"><div class="t"><span>🏁</span>${c[0]}</div><p class="m">${c[1]}</p><button class="btn ${ok?'o':''}" ${ok?'disabled':''} onclick="reto(${i})">${ok?'✓ Completado':'Marcar como completado'}</button></div>`}).join('')}</div>`}
+function reto(i){if(cur().d.ch.includes(i))return;save(x=>x.d.ch.push(i));add(30,'Reto completado');render()}
+
+function recompensas(){const x=cur(),d=x.d,ok=d.p>=300;
+ return `<h1>Recompensas</h1><p class="sub">Tienes ${d.p} puntos. Las insignias se desbloquean solas.</p><div class="g3">${B.map(b=>`<div class="card bd ${b[3](d)?'':'lk'}"><b>${b[0]}</b><h2>${b[1]}</h2><p class="m s">${b[2]}</p></div>`).join('')}</div>
+<h3>Certificado digital</h3>${ok?`<div class="card cert"><p class="m">Sumaq Inti certifica que</p><h2>${x.n}</h2><p>completó la ruta de Educación Financiera con ${d.p} puntos.</p><p class="m s" style="margin:10px 0">${new Date().toLocaleDateString('es-PE')}</p><button class="btn noprint" onclick="print()">Imprimir o guardar PDF</button></div>`:`<div class="card"><p class="m">Consigue 300 puntos para desbloquear tu certificado. Te faltan <b>${300-d.p}</b>.</p></div>`}`}
+
+const VIEWS={inicio,cursos,simuladores,quizzes,retos,recompensas};
+function render(){me=localStorage.getItem('si_s');if(me&&!U()[me])me=null;const a=$('#app');
+ if(!me){if(v!='auth')v='land';a.innerHTML=v=='auth'?AUTH():LAND();return}
+ if(v=='land'||v=='auth')v='inicio';const x=cur();
+ a.innerHTML=`<div class="app"><nav class="side"><div class="logo">☀️ SUMAQ <span>INTI</span></div>${NAV.map(n=>`<button class="${v==n[0]?'on':''}" onclick="go('${n[0]}')">${n[1]} ${n[2]}</button>`).join('')}</nav><div class="main"><div class="top"><div class="av">${x.n.charAt(0)}</div><div>${x.n}<small class="m" style="display:block">${x.g||''}</small></div><button class="btn o" onclick="out()">Salir</button></div>${VIEWS[v]()}</div></div>`}
+render();
+</script>
+</body>
+</html>
